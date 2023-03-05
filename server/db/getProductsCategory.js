@@ -1,6 +1,12 @@
 import products from "~/server/db/db";
 
-export default (category) => {
-	const categoryProducts = products.find(i => i.id === category)
-	return categoryProducts.products
+export default (categoryHref) => {
+	const category = products.find(i => i.href === categoryHref)
+	category.products = category.products.map(product => ({
+		categoryHref: category.href,
+		categoryName: category.name,
+		...product
+	}))
+	return category
+
 }

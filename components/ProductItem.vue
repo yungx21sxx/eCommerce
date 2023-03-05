@@ -1,27 +1,25 @@
 <template>
 	<v-card
-
+		 class="product-item"
+		 :href="`/${product.categoryHref}/${product.id}`"
+		 height="300px"
 	>
-		<v-img
-			 class="align-end text-white"
-			 height="200"
-			 :src="product.img"
-			 cover
-		>
+		<div class="product-item__img-container">
+			<v-img
+				 height="200"
+				 width="200"
+				 :src="product.img"
+			></v-img>
+		</div>
 
-		</v-img>
 
-		<v-card-title>{{product.title}}</v-card-title>
+
+
+		<v-card-title>{{product.price}}$</v-card-title>
 
 		<v-card-text>
-			{{product.description}}
+			{{product.title}}
 		</v-card-text>
-
-		<v-card-actions>
-			<v-btn color="orange" @click="router.push(`/${product.categoryID}/${product.id}`)">
-				Смотреть
-			</v-btn>
-		</v-card-actions>
 	</v-card>
 
 </template>
@@ -41,6 +39,13 @@ defineProps({
 
 </script>
 
-<style scoped>
+<style scoped lang="scss">
+
+.product-item {
+	&__img-container {
+		display: flex;
+		justify-content: center;
+	}
+}
 
 </style>

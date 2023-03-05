@@ -1,0 +1,49 @@
+<template>
+	<svg  width="34" height="29" viewBox="0 0 34 29"  xmlns="http://www.w3.org/2000/svg" :class="{
+        black: color === 'black',
+        active: liked
+	}">
+		<path d="M10.25 2C5.69375 2 2 5.51786 2 9.85714C2 17.7143 11.75 24.8571 17 26.5186C22.25 24.8571 32 17.7143 32 9.85714C32 5.51786 28.3063 2 23.75 2C20.96 2 18.4925 3.31929 17 5.33857C16.2393 4.30658 15.2286 3.46435 14.0537 2.88321C12.8787 2.30206 11.574 1.99911 10.25 2Z"  stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+	</svg>
+	
+
+</template>
+
+<script>
+export default {
+    name: "LikeIcon",
+	props: {
+        color: {
+            type: String,
+            required: false,
+	        default: 'white'
+        },
+		liked: {
+            type: Boolean,
+            required: true,
+		}
+	}
+}
+</script>
+
+<style scoped lang="sass">
+
+	
+	svg.black
+		fill: rgba(0,0,0,0)
+		transition: .3s ease-in-out
+		path
+			stroke: black
+		&.active
+
+			fill: black
+	svg
+		fill: rgba(0,0,0,0)
+		transition: .3s ease-in-out
+		path
+			stroke: white
+		&.active
+		
+			fill: white
+
+</style>

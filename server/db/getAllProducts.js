@@ -5,7 +5,7 @@ export default () => {
 	for (const category of categories) {
 		for (const product of category.products) {
 			products.push({
-				categoryID: category.id,
+				categoryHref: category.href,
 				categoryName: category.name,
 				...product
 			})
